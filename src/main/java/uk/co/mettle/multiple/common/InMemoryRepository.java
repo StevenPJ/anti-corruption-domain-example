@@ -29,7 +29,7 @@ public class InMemoryRepository implements PaymentRepository, FincrimeRepository
     public void save(Payment payment) {
         payments.put(payment.getId(),payment);
         var fincrimeEvent = cacheOfEvents.get(payment.getId());
-        eventsPublisher.publish(new PaymentEventForFincrime(payment.getId(), fincrimeEvent.getCrimeIndicator(), payment.isCompleted()));
+        eventsPublisher.publish(new PaymentEventForFincrime(payment.getId(), fincrimeEvent.getCrimeIndicator(), payment.isCompleted(), fincrimeEvent.getANumber()));
     }
 
     @Override

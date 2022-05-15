@@ -9,4 +9,5 @@ class PaymentEvent {
     UUID paymentId;
     String fraudInidcator;
     boolean completed;
+    int aNumber;
 }

@@ -16,12 +16,12 @@ class InMemoryRepository implements PaymentRepository {
     @Override
     public Payment findBy(UUID paymentId) {
         return Optional.ofNullable(payments.get(paymentId))
-                .orElseGet(() -> new Payment(paymentId, null, false));
+                .orElseGet(() -> new Payment(paymentId, null, false, 0));
     }
 
     @Override
     public void save(Payment payment) {
         payments.put(payment.getId(),payment);
-        eventsPublisher.publish(new PaymentEvent(payment.getId(), payment.getFraudIndicator(), payment.isCompleted()));
+        eventsPublisher.publish(new PaymentEvent(payment.getId(), payment.getFraudIndicator(), payment.isCompleted(), payment.getANumber()));
     }
 }

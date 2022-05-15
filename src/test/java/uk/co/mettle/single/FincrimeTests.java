@@ -33,6 +33,6 @@ public class FincrimeTests {
         paymentService.takePayment(new TakePaymentRequest(aPayment, "4Drugz", 1));
 
         // then
-        assert EventsPublisher.getInstance().hasPublished(new PaymentEvent(aPayment, "4Drugz", true));
+        assert EventsPublisher.getInstance().hasPublished(new PaymentEvent(aPayment, "4Drugz", true, 1));
     }
 }

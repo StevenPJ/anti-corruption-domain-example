@@ -12,11 +12,13 @@ class Payment {
     UUID id;
     String fraudIndicator;
     boolean completed;
+    int aNumber;
 
     public Payment takePayment(TakePaymentRequest request) {
         return this.toBuilder()
                 .fraudIndicator(request.getFraudIndicator())
                 .completed(true)
+                .aNumber(request.getANumber())
                 .build();
     }
 }

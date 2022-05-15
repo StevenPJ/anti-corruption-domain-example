@@ -9,4 +9,5 @@ public class PaymentEventForFincrime {
     UUID paymentId;
     String crimeIndicator;
     boolean completed;
+    int aNumber;
 }

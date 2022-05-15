@@ -8,4 +8,5 @@ import java.util.UUID;
 public class FincrimeEvent {
     UUID paymentId;
     String crimeIndicator;
+    int aNumber;
 }
