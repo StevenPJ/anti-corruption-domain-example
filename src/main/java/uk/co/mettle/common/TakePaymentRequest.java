@@ -8,4 +8,5 @@ import java.util.UUID;
 public class TakePaymentRequest {
     UUID paymentId;
     String fraudIndicator;
+    int aNumber;
 }

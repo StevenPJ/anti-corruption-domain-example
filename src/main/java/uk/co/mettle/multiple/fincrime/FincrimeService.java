@@ -11,7 +11,7 @@ public class FincrimeService implements Fincrime {
 
     @Override
     public void check(PaymentCrimeRequest request) {
-        fincrimeClient.check(new FincrimeClient.CrimeCheckRequest(request.getPaymentId(), request.getFraudIndiciator()));
+        fincrimeClient.check(new FincrimeClient.CrimeCheckRequest(request.getPaymentId(), request.getFraudIndiciator(), request.getANumber()));
         fincrimeRepository.save(new FincrimeEvent(request.getPaymentId(), request.getFraudIndiciator()));
     }
 }

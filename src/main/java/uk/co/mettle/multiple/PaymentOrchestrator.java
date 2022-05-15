@@ -13,7 +13,7 @@ class PaymentOrchestrator {
 
     public void takePayment(TakePaymentRequest request) {
         var payment = paymentRepository.findBy(request.getPaymentId());
-        fincrime.check(new Fincrime.PaymentCrimeRequest(request.getPaymentId(), request.getFraudIndicator()));
+        fincrime.check(new Fincrime.PaymentCrimeRequest(request.getPaymentId(), request.getFraudIndicator(), request.getANumber()));
         paymentRepository.save(payment.takePayment());
     }
 }

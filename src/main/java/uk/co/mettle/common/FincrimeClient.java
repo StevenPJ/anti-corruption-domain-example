@@ -11,5 +11,6 @@ public interface FincrimeClient {
     class CrimeCheckRequest {
         UUID paymentId;
         String aCrimeIndicator;
+        int aNumber;
     }
 }

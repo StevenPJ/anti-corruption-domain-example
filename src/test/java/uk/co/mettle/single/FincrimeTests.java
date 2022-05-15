@@ -18,10 +18,10 @@ public class FincrimeTests {
         var aPayment = UUID.randomUUID();
 
         // when
-        paymentService.takePayment(new TakePaymentRequest(aPayment, "4Drugz"));
+        paymentService.takePayment(new TakePaymentRequest(aPayment, "4Drugz", 1));
 
         // then
-        Mockito.verify(fincrimeClient).check(new FincrimeClient.CrimeCheckRequest(aPayment, "4Drugz"));
+        Mockito.verify(fincrimeClient).check(new FincrimeClient.CrimeCheckRequest(aPayment, "4Drugz", 1));
     }
 
     @Test
@@ -30,7 +30,7 @@ public class FincrimeTests {
         var aPayment = UUID.randomUUID();
 
         // when
-        paymentService.takePayment(new TakePaymentRequest(aPayment, "4Drugz"));
+        paymentService.takePayment(new TakePaymentRequest(aPayment, "4Drugz", 1));
 
         // then
         assert EventsPublisher.getInstance().hasPublished(new PaymentEvent(aPayment, "4Drugz", true));

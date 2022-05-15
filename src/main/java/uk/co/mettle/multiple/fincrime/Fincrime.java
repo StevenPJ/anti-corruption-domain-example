@@ -11,5 +11,6 @@ public interface Fincrime {
     class PaymentCrimeRequest {
         UUID paymentId;
         String fraudIndiciator;
+        int aNumber;
     }
 }
